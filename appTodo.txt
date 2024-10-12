@@ -1,0 +1,20 @@
+-connect and save repo from git
+    git init->git add->git commit-> git remote add origin(https)->git push -u origin main
+-backend 
+    set up api
+    create routes
+    set up and test db querys in controllers
+
+-frontend
+    set up vite
+    create login and reg form and connect crud 
+
+    echo "# SongShare" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/Etherjac/SongShare.git
+git push -u origin main
+
+
