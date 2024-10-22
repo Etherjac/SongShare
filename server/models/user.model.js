@@ -22,15 +22,16 @@ const UserSchema = new Schema({
     email:{
         type:String,
         required:[true,'field is required'],
-        // validate:[isEmail, 'email already exists']
-        validate:[isEmail, "email exists"],
-        unique
+        validate:[isEmail, "not a valid email"],
+        unique:[true,"email is already in use"]
     },
     password:{
         type:String,
         required:[true,'field is required']
         
-    }},{timestamps:true})
+    },
+  
+},{timestamps:true})
 // UserSchema.plugin(validate)
 //middleware
 UserSchema.plugin(mongooseUniqueValidator)
@@ -53,7 +54,7 @@ UserSchema.pre('save',function (next){
     })
 
 
-const User = model("User", UserSchema)
+const User = model('User', UserSchema)
 
 export default User
 

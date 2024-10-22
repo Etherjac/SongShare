@@ -7,11 +7,23 @@ const SongSchema = new Schema({
     },
     songArtist:{
         type:String,
-        required:[true,'son artist is requiered']
+        required:[true,'song artist is requiered']
     },
     songGenre:{
         type:String,
         required:[true,'']
+    },
+    //join users to song.
+    userID:{
+        //ObjectID is just a mongo type.
+        type:Schema.Types.ObjectId,
+        ref:'User',//the model reference(model name)
+        required:[true, "user ID is required"]
+    },
+    userName:{
+        type:Schema.Types.String,
+        ref:'User',
+        requiered:[true,"song needs a user who shared it"]
     }
     
 },{timestamps:true})
